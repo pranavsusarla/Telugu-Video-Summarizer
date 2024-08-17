@@ -1,9 +1,8 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <router-link to="/" style="text-decoration: none; color: inherit;"><h1 class="m-5">Welcome to Telugu Video Summarizer</h1></router-link>
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -27,4 +26,6 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>
