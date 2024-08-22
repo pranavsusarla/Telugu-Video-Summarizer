@@ -1,4 +1,4 @@
-#Function which takes YouTube url returns its text
+from youtube_transcript_api import YouTubeTranscriptApi
 
 def extract_transcript_details(youtube_video_url):
     try:
