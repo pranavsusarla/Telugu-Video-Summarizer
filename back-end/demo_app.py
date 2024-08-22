@@ -1,3 +1,5 @@
+#this is old code
+'''
 import streamlit as st
 from dotenv import load_dotenv
 from googletrans import Translator  # Import the Translator class
@@ -63,3 +65,4 @@ if st.button("Summarize"):
         with tab2:
             st.markdown("## Detailed Notes in Telugu:")
             st.write(telugu_summary)
+'''
