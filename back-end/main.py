@@ -1,18 +1,19 @@
 from dotenv import load_dotenv
 from googletrans import Translator
-
-load_dotenv()
-
 from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS, cross_origin
+import markdown2 as md2
+
+from summarizedText import generate_gemini_content
+from url_to_textfunction import extract_transcript_details
+
+load_dotenv()
+
 app = Flask(__name__)
 api = Api(app)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-
-from summarizedText import generate_gemini_content
-from url_to_textfunction import extract_transcript_details
 
 url = ""
 transcript = ""
@@ -35,7 +36,8 @@ class TextHandler(Resource):
     def get(self):
         global transcript
         print('I GOT THE TRANSCRIPT: ', transcript[:20])
-        summary = generate_gemini_content(transcript)
+        resp = generate_gemini_content(transcript)
+        summary = md2.markdown(resp)
         return {"summary": summary}, 200
 
 # Add the resource to the API with a specific endpoint

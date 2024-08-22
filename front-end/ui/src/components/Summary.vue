@@ -3,9 +3,7 @@
         <div v-if="loading">
             Your YouTube video is being summarized...
         </div>
-        <div v-else>
-            {{ summary }}
-        </div>
+        <div v-else v-html="summary" class="container" id="csummary"></div>
     </div>
 </template>
 
@@ -38,5 +36,7 @@
 </script>
 
 <style scoped>
-
+#csummary {
+    text-align: left;
+}
 </style>
