@@ -1,4 +1,4 @@
-import whisper
+# import whisper
 
 def transcribe_telugu_audio(file_path):
     # Load the Whisper model

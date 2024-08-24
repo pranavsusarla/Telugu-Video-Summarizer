@@ -75,8 +75,8 @@ class FileHandler(Resource):
     
 class LocalSummary(Resource):
     def get(self):
-        transcript = transcribe_telugu_audio('uploads/audio1')
-        return jsonify({"summary": transcript})
+        # transcript = transcribe_telugu_audio('uploads/audio1')
+        return jsonify({"summary": "Local video's transcript will appear here"})
 
 # Add the resource to the API with a specific endpoint
 api.add_resource(URLHandler, '/URLsummary')
