@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="loading">
-            <h5 class="p-5">Your YouTube video is being summarized...</h5>
+            <h5 class="p-5">Your Local video is being summarized...</h5>
             <div class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
@@ -20,13 +20,11 @@
 
 <script>
     export default {
-        name: 'Summary',
+        name: 'LocalSummary',
         data(){
             return{
                 loading: true,
                 summary: '',
-                video_id: '',
-                imgurl: '',
                 language: 'english'
             }
         },
@@ -36,12 +34,10 @@
         methods:{
             async loadSummary(){
                 try{
-                    const response = await fetch('http://127.0.0.1:5000/URLsummary');
+                    const response = await fetch('http://127.0.0.1:5000/localSummary');
                     const json = await response.json();
-                    console.log('Summary:'+json);
-                    this.summary = json.summary
-                    this.video_id = json.video_id
-                    this.imgurl = 'http://img.youtube.com/vi/'+this.video_id+'/0.jpg'
+                    console.log('JSON FROM LSUMMARY: '+json.summary);
+                    this.summary = json.summary;
                     this.loading = false
                 }catch(e){
                     console.error(e);
@@ -52,7 +48,5 @@
 </script>
 
 <style scoped>
-#csummary {
-    text-align: left;
-}
+
 </style>

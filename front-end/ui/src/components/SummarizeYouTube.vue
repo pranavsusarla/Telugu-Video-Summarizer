@@ -42,9 +42,6 @@
                     try{
                         const response = await fetch(apiurl,{
                             method: 'POST',
-                            headers:{
-                                'Content-Type': 'application/json',
-                            },
                             body: JSON.stringify(data)
                         })
                         const json =  await response.json()
@@ -53,7 +50,7 @@
                         this.$router.push('/summary');
                     }catch(e){
                         this.loading = false;
-                        this.error = 'There seems to be a problem in fetching the URL'
+                        this.error = 'There seems to be a problem in fetching the URL. Please try again after some time'
                         console.error(e);
                     }
                 }else{

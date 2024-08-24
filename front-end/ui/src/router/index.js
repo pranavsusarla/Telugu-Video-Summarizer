@@ -3,6 +3,7 @@ import HomePage from '@/components/HomePage.vue'
 import SummarizeLocal from '@/components/SummarizeLocal.vue'
 import SummarizeYouTube from '@/components/SummarizeYouTube.vue'
 import Summary from '@/components/Summary.vue'
+import LocalSummary from '@/components/LocalSummary.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/summary',
     name: 'Summary',
     component: Summary
+  },
+  {
+    path: '/summaryLocal',
+    name: 'LocalSummary',
+    component: LocalSummary
   }
 ]
 

@@ -1,10 +1,11 @@
 <template>
   <div>
-    <router-link to="/" style="text-decoration: none; color: inherit;"><h1 class="m-5">Welcome to Telugu Video Summarizer</h1></router-link>
+    <router-link to="/" style="text-decoration: none; color: inherit;">
+      <h1 class="m-5">Welcome to Telugu Video Summarizer</h1>
+    </router-link>
     <router-view />
   </div>
 </template>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -13,11 +14,9 @@
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   padding: 30px;
 }
-
 nav a {
   font-weight: bold;
   color: #2c3e50;
