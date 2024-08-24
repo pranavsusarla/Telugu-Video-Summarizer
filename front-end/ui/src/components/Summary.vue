@@ -10,6 +10,7 @@
             <div class="container">
                 <button class="btn btn-primary m-3" @click="language='english'">English</button>
                 <button class="btn btn-success m-3" @click="language='telugu'">Telugu</button>
+                <button class="btn btn-danger m-3" @click="language='hindi'">Hindi</button>
             </div>
             <!-- {{ imgurl }}
             <img :src=imgurl alt=""> -->
